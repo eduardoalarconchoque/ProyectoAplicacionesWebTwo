@@ -1,0 +1,43 @@
+<mat-drawer-container class="cliente-container">
+
+  <mat-drawer #myDrawer class="cliente-sidenav" mode="side" opened>
+    <br>
+    <br>
+    <mat-nav-list>
+
+      <a mat-list-item routerLink="/cliente/dashboard/dashboard" routerLinkActive="active-link">
+        <mat-icon>home</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      <br>
+      <a mat-list-item routerLink="/cliente/dashboard/pedido" routerLinkActive="active-link">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Ver Pedido</span>
+      </a>
+      <br>
+      <a mat-list-item routerLink="/cliente/dashboard/ordenes" routerLinkActive="active-link">
+        <mat-icon>receipt_long</mat-icon>
+        <span>Ver Orden</span>
+      </a>
+      <br>
+      <a mat-list-item routerLink="/cliente/dashboard/listaPagos" routerLinkActive="active-link">
+        <mat-icon>payment</mat-icon>
+        <span>Pagos</span>
+      </a>
+
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content class="cliente-content">
+
+
+    <button mat-icon-button (click)="myDrawer.toggle()" class="menu-toggle-btn">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <br>
+    
+    <router-outlet></router-outlet>
+    
+  </mat-drawer-content>
+
+</mat-drawer-container>

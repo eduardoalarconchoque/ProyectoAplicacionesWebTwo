@@ -1,0 +1,35 @@
+.table-container {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-header-cell {
+    color: #000;
+    background-color: #f1f1f1;
+  }
+  
+  .mat-cell {
+    color: #000;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .no-pagos-message {
+    text-align: center;
+    padding: 16px;
+    color: #777;
+    font-size: 18px;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  mat-paginator {
+    margin-top: 16px;
+  }
+  

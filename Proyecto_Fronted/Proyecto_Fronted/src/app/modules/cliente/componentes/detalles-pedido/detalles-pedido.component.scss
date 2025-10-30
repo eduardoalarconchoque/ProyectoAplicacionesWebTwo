@@ -1,0 +1,77 @@
+h1{
+  font-weight: bolder;
+}
+
+
+mat-dialog-content {
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fdfdfd; // blanco suave para el fondo
+  color: #000; // texto negro
+}
+
+.h1-de {
+  // color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+mat-dialog-title h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  // color: red;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+mat-dialog-content p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+mat-dialog-content p strong {
+  color: #203a43;
+  font-weight: 600;
+}
+
+mat-dialog-content p strong[ngStyle] {
+  padding: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* Estilo general para todos los botones */
+button {
+  background-color: #fff; 
+  color: #000;
+  border: 1px solid #333; 
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+button:hover {
+  background-color: #f0f0f0; 
+  color: #000;
+}
+
+/* Botón de cierre específico si usas mat-dialog-close */
+button[mat-dialog-close] {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+// button[mat-dialog-close]:hover {
+//   background-color: #f0f0f0;
+//   color: #000;
+// }

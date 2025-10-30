@@ -1,0 +1,38 @@
+/* Estilo general del fondo */
+table.mat-elevation-z8 {
+  background-color: #f9f9f9; /* Blanco suave */
+  color: #000000; /* Letras negras */
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado de tabla */
+th.mat-header-cell {
+  background-color: #e0e0e0; 
+  font-weight: bold;
+  color: #000;
+  text-align: left;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* Celdas de datos */
+td.mat-cell {
+  padding: 12px;
+  font-size: 15px;
+  color: #222;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Filas alternas con ligero fondo para mejor visibilidad */
+tr.mat-row:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+h2 {
+  color: #222;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}

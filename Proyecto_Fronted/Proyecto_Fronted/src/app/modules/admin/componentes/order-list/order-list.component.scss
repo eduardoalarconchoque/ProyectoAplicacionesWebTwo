@@ -1,0 +1,96 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-header-cell {
+    font-weight: bold;
+  }
+  
+  mat-paginator {
+    margin-top: 20px;
+  }
+  
+
+
+
+
+  /* Contenedor principal */
+h2 {
+  font-size: 24px;
+  color: #2c5364; /* Color similar al degradado en la cabecera */
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Estilo del contenedor de selección */
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f4f7f6; /* Fondo suave para destacar la sección */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%;
+  max-width: 400px; /* Máximo ancho para la sección */
+  margin: 0 auto; /* Centrado */
+}
+
+/* Etiquetas */
+label {
+  font-size: 16px;
+  color: #203a43; /* Color oscuro para buen contraste */
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Estilo del selector */
+select {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+/* Cambia el borde al enfocar el selector */
+select:focus {
+  border-color: #2c5364;
+  outline: none;
+}
+
+/* Estilo del botón de búsqueda */
+button {
+  background-color: #203a43;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de hover para el botón */
+button:hover {
+  background-color: #2c5364;
+  transform: scale(1.05);
+}
+
+/* Efecto de foco para el botón */
+button:focus {
+  outline: none;
+  background-color: #2c5364;
+}
+
+/* Mensaje */
+p {
+  font-size: 16px;
+  color: #d9534f; /* Color rojo para mensajes de error o advertencia */
+  text-align: center;
+  margin-top: 12px;
+}

@@ -1,0 +1,91 @@
+<h2>Buscar Órdenes por Usuario</h2>
+
+<div>
+  <label for="userSelect">Seleccionar Usuario:</label>
+  <select [(ngModel)]="userId" id="userSelect">
+    <option *ngFor="let user of usuarios" [value]="user.id">
+      {{ user.nombre }} (ID: {{ user.id }})
+    </option>
+  </select>
+  <button (click)="buscarOrdenesPorUsuario()">Buscar</button>
+</div>
+
+<p *ngIf="mensaje">{{ mensaje }}</p>
+
+<table mat-table [dataSource]="dataSource" matSort>
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+    <td mat-cell *matCellDef="let orden">{{ orden.id }}</td>
+  </ng-container>
+
+  <!-- Nombre del Usuario Column -->
+  <ng-container matColumnDef="userNombre">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre del Usuario</th>
+    <td mat-cell *matCellDef="let orden">{{ orden.userNombre }}</td>
+  </ng-container>
+
+  <!-- Fecha Column -->
+  <ng-container matColumnDef="fecha">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+    <td mat-cell *matCellDef="let orden">{{ orden.fecha | date:'dd/MM/yyyy HH:mm' }}</td>
+  </ng-container>
+
+  <!-- Total Column -->
+  <ng-container matColumnDef="total">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Total</th>
+    <td mat-cell *matCellDef="let orden">S/ {{ orden.total }}</td>
+  </ng-container>
+
+  <!-- Estado Column -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+    <td mat-cell *matCellDef="let orden">
+      <strong [ngStyle]="{
+          'color': orden.status === 'PENDIENTE' ? 'gray' :
+                   orden.status === 'PROCESANDO' ? 'blue' :
+                   orden.status === 'ENVIADO' ? 'orange' :
+                   'green'}">
+        {{ orden.status }}
+      </strong>
+    </td>
+  </ng-container>
+
+
+  <!-- Acciones Column -->
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+    <td mat-cell *matCellDef="let orden">
+      <button *ngIf="orden.status === 'PENDIENTE'" 
+              mat-button 
+              [ngStyle]="{'background-color': 'gray', 'color': 'white'}"
+              (click)="cambiarEstadoOrden(orden)">
+        Procesar Orden
+      </button>
+      <button *ngIf="orden.status === 'PROCESANDO'" 
+              mat-button 
+              [ngStyle]="{'background-color': 'blue', 'color': 'white'}"
+              (click)="cambiarEstadoOrden(orden)">
+        Enviar Orden
+      </button>
+      <button *ngIf="orden.status === 'ENVIADO'" 
+              mat-button 
+              [ngStyle]="{'background-color': 'orange', 'color': 'white'}"
+              (click)="cambiarEstadoOrden(orden)">
+        Marcar como Entregado
+      </button>
+      <button *ngIf="orden.status === 'ENTREGADO'" 
+              mat-button 
+              [ngStyle]="{'background-color': 'green', 'color': 'white'}"
+              (click)="cambiarEstadoOrden(orden)">
+        Orden Entregada
+      </button>
+    </td>
+  </ng-container>
+  <!-- Tabla -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<!-- Paginación -->
+<mat-paginator [length]="ordenes.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>

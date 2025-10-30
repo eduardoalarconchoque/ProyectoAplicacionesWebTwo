@@ -1,0 +1,61 @@
+/* Estilo para el título */
+mat-dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c5364;
+    text-align: center;
+    padding: 16px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para el contenido */
+  mat-dialog-content {
+    font-size: 20px;
+    color: black;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  mat-dialog-content p {
+    margin: 10px 0;
+  }
+  
+  /* Estilo para los botones */
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  /* Estilo del botón "Cancelar" */
+  button[mat-button] {
+    background-color: #f0f0f0;
+    color: #444;
+    border-radius: 20px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[mat-button]:hover {
+    background-color: #ddd;
+  }
+  
+  /* Estilo del botón "Crear carrito" */
+  button[mat-raised-button] {
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button[mat-raised-button]:hover {
+    transform: translateY(-2px);
+    
+  }
+  

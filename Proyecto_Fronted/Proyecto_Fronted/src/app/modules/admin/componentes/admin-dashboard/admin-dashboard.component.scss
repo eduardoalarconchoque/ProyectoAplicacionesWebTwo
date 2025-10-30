@@ -1,0 +1,150 @@
+.admin-container {
+  display: flex;
+  height: 100vh;
+  background-color: #F5F5DC;
+}
+
+.menu-toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background-color: #000;
+  border-radius: 4px; 
+  padding: 1px;        
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.menu-toggle-btn mat-icon {
+  font-size: 30px; 
+  color: #FFFFFF;
+}
+
+.admin-sidenav {
+  width: 250px;
+  background-color: #1a1a1a;
+  color: #FFFFFF;
+  padding: 20px;
+
+}
+
+.admin-sidenav mat-nav-list {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // margin-top: 15px;
+}
+
+.admin-sidenav mat-list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.admin-sidenav mat-list-item mat-icon {
+  margin-right: 12px; 
+  font-size: 24px;    
+  color: #FFFFFF;     
+}
+
+.admin-sidenav mat-list-item:hover {
+  background-color: #203a43;
+  cursor: pointer;
+}
+
+.admin-content {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  color: white;
+}
+
+.admin-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1F2A44;
+}
+
+.admin-button {
+  background-color:#1a1a1a;
+  color: #FFFFFF;
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 10px 20px;
+}
+
+.admin-button:hover {
+  background-color: #203a43;
+}
+
+.active-link {
+  background-color: #203a43; 
+  color: white;               
+  border-radius: 5px;
+}
+
+.admin-toolbar button {
+  background-color: #203a43;
+  color: #FFFFFF;
+}
+
+.admin-toolbar .spacer {
+  flex: 1;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1F2A44;
+}
+
+.card-content {
+  color: #2C3E50;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* --------------------------------------- */
+
+mat-list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+mat-icon {
+  margin-right: 12px;
+  font-size: 24px;    
+  color:white;     
+  transition: transform 0.3s ease;
+}
+
+mat-list-item:hover mat-icon {
+  transform: scale(1.1);
+}
+
+span {
+  font-size: 16px;
+  color: white;
+}
+
+.active-link {
+  background-color: #1a1a1a; 
+  border-radius: 4px;
+}

@@ -1,0 +1,41 @@
+<mat-card class="buscar-producto-card">
+    <mat-card-header>
+      <mat-card-title>Buscar Producto</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <form [formGroup]="searchForm" (ngSubmit)="buscar()">
+        <div class="form-fields">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Nombre del producto</mat-label>
+            <input matInput formControlName="nombre">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Categoría</mat-label>
+            <input matInput formControlName="categoriaNombre">
+          </mat-form-field>
+        </div>
+  
+        <div class="submit-button-container">
+          <button mat-raised-button color="primary" type="submit">Buscar</button>
+        </div>
+      </form>
+      
+      <mat-divider class="my-4"></mat-divider>
+  
+      <div *ngIf="productos.length > 0">
+        <h3>Resultados:</h3>
+        <div class="productos-container">
+          <mat-card *ngFor="let producto of productos" class="producto-card">
+            <mat-card-title>{{ producto.nombre }}</mat-card-title>
+            <mat-card-content>
+              <p>{{ producto.descripcion }}</p>
+              <p><strong>Precio: </strong>S/. {{ producto.precio }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

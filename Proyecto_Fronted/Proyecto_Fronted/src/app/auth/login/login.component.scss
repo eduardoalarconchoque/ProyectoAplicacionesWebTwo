@@ -1,0 +1,46 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+
+  background: 
+    linear-gradient(to right, rgba(26, 26, 26, 0.8), rgba(34, 34, 34, 0.8)), 
+    url("/icons/compraa.jpg") no-repeat center center; 
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.login-card {
+  width: 360px;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  font-size: 14px; 
+  color: #000000; 
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000; 
+}
+
+.error-msg {
+  color: red; 
+  text-align: center;
+  margin-bottom: 12px;
+}

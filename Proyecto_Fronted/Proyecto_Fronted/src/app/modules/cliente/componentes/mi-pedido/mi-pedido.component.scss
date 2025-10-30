@@ -1,0 +1,157 @@
+.mat-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.mat-header-row,
+.mat-row {
+  height: 120px;
+}
+
+
+.mat-header-cell,
+.mat-cell {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;  
+}
+
+
+.product-image {
+  width: 90px;
+  height: 120px;
+  object-fit: contain;  
+  border-radius: 4px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+.mat-header-cell {
+  font-weight: bold;
+  background-color: #f4f4f4;
+  color: #333; 
+}
+
+.mat-icon-button {
+  background-color: #ff4081;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.mat-icon-button:hover {
+  background-color: #ff1f5f;
+}
+
+
+.mat-row {
+  background-color: #fff;  
+  transition: background-color 0.3s ease;
+}
+
+.mat-row:hover {
+  background-color: #f9f9f9; 
+}
+
+
+.btn-c-or {
+  background-color: #333;
+  color: #fff;
+}
+
+.mat-elevation-z8 {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stock {
+  color: green; 
+}
+
+
+.cantidad {
+  color: #00bcd4;  
+}
+
+
+.mat-cell,
+.mat-header-cell {
+  padding: 8px 4px;
+}
+
+
+@media (max-width: 600px) {
+  .mat-table {
+    font-size: 12px;  
+  }
+
+  .mat-header-cell, .mat-cell {
+    padding: 8px; 
+  }
+
+  .product-image {
+    width: 80px;
+    height: 80px; 
+  }
+
+  .mat-cell img {
+    display: block;
+    max-width: 100%;
+  }
+  
+}
+
+
+
+
+///Diseño de total --------//
+
+.total-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  padding: 0 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+.action-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px 16px 0 0;
+}
+
+
+.total-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.total-label {
+  color: #555;
+}
+
+.total-value {
+  color: #00796b;
+}

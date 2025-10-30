@@ -1,0 +1,146 @@
+.product-container {
+    padding: 20px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px;
+  }
+  
+  .product-card {
+    background-color: #f4f4f4; 
+    color:black; 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  }
+  
+  .product-header {
+    margin-bottom: 10px;
+  }
+  
+  .product-header h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .product-header h4 {
+    font-size: 16px;
+    color: #bbb;
+    margin: 0;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    image-rendering: crisp-edges;
+  }
+  
+  .product-content {
+    flex-grow: 1;
+  }
+  
+  .product-content p {
+    margin: 5px 0;
+  }
+  
+  .stock-badge {
+    background-color: #fff;
+    color: rgb(141, 212, 141);
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .product-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button[mat-icon-button] {
+    background-color: #555;
+    color: white;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+  
+  button[mat-icon-button]:hover {
+    background-color: #777;
+  }
+  
+
+//-----el css para el busqueda-------//
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 20px 10px 0;
+}
+
+.search-form {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-field {
+  width: 200px;
+}
+
+button[mat-raised-button] {
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-buscar {
+  position: absolute;
+  margin-left: 440px;
+  margin-bottom: 20px ;
+}
+
+.btn-crear-carrito {
+  position: absolute;
+  margin-left: 570px;
+  margin-bottom: 20px ;
+  background-color: #333;
+  color: #fff;
+}
+
+
+//-----el fin css para el busqieda-------//
+
+.top-actions-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 20px 10px 0;
+}
+
+
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}
+
+.info-snackbar {
+  background-color: #2196f3;
+  color: white;
+}

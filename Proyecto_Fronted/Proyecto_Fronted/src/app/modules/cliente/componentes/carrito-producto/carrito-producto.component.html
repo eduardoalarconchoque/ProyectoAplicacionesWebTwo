@@ -1,0 +1,18 @@
+<div class="carrito-producto-container">
+  <h2>{{ data.product.nombre }}</h2> 
+  <img [src]="getImageUrl(data.product)" alt="{{ data.product.nombre }}" class="product-image" />
+  
+  <p>Descripción: {{ data.product.descripcion }}</p>
+  <p>Precio: {{ data.product.precio | currency }}</p>
+  <p>Stock disponible: {{ data.product.stock }} unidades</p>
+
+  <div class="cantidad-container">
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" [(ngModel)]="cantidad" min="1" [max]="data.product.stock">
+  </div>
+
+  <div class="acciones-container">
+    <button mat-raised-button color="primary" (click)="agregarAlCarrito()">Agregar al carrito</button>
+    <button mat-button (click)="cerrar()">Cancelar</button>
+  </div>
+</div>

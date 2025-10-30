@@ -1,0 +1,65 @@
+<div class="top-actions-container">
+  <form [formGroup]="searchForm" (ngSubmit)="getSearchResults()" class="search-form">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Buscar productos</mat-label>
+      <input matInput formControlName="searchName" placeholder="Ingrese nombre">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Categoría</mat-label>
+      <mat-select formControlName="selectedCategoryId">
+        <mat-option *ngFor="let category of categories" [value]="category.id">
+          {{ category.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button class="btn-buscar" mat-raised-button color="primary" type="submit">
+      <mat-icon>search</mat-icon>&nbsp;Buscar
+    </button>
+
+    <!-- <button mat-raised-button color="primary" (click)="abrirDialogoCrearCarrito()">
+      Primero Crear Tu Carrito Aqui
+    </button> -->
+
+  </form>
+  <button class="btn-crear-carrito" mat-raised-button color="primary" (click)="abrirDialogoCrearCarrito()">
+    Primero Crear Tu Carrito Aqui
+  </button>
+  
+</div>
+
+
+
+
+<div class="product-container">
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of products">
+      
+      <div class="product-header">
+        <h2>{{ product.nombre }}</h2>
+        <h4>{{ product.categoriaNombre }}</h4>
+      </div>
+
+      <img [src]="getImageUrl(product)" alt="{{ product.nombre }}" class="product-image" />
+
+      <div class="product-content">
+        <p>{{ product.descripcion }}</p>
+        <p><strong>Precio:</strong> ${{ product.precio }}</p>
+        <div class="stock-badge">
+          Stock disponible: {{ product.stock }} unidades
+        </div>
+      </div>
+
+      <div class="product-actions">
+        <button mat-icon-button color="primary" (click)="abrirCarritoProducto(product)" matTooltip="Agregar al carrito">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+<br>
+<br>

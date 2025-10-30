@@ -1,0 +1,55 @@
+<div class="tabla-ordenes-container" *ngIf="ordenes.length > 0; else noOrdenes">
+    <h2>Mis Órdenes</h2>
+    <table mat-table [dataSource]="ordenes" class="mat-elevation-z8">
+  
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Orden ID </th>
+        <td mat-cell *matCellDef="let orden"> {{ orden.id }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let orden"> {{ orden.fecha }} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef> Total (S/.) </th>
+        <td mat-cell *matCellDef="let orden"> {{ orden.total }} </td>
+      </ng-container>
+  
+    
+     <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Estado de Pedido </th>
+      <td mat-cell *matCellDef="let orden">
+        <strong [ngStyle]="{
+            'color': orden.status === 'PENDIENTE' ? 'gray' :
+                     orden.status === 'PROCESANDO' ? 'blue' :
+                     orden.status === 'ENVIADO' ? 'orange' :
+                     'green'}">
+          {{ orden.status }}
+        </strong>
+      </td>
+    </ng-container>
+    
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let orden">
+          <button mat-button (click)="openPagoDialog(orden.id, orden.total)">
+            <mat-icon>payment</mat-icon> Pagar Orden</button>
+        </td>
+      </ng-container>
+  
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+  </div>
+  
+  <ng-template #noOrdenes>
+    <p>No tienes órdenes aún.</p>
+  </ng-template>
+  

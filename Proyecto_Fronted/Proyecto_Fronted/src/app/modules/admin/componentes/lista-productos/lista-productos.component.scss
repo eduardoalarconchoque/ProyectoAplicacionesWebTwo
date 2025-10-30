@@ -1,0 +1,102 @@
+.search-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 15px; 
+}
+
+.search-container form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-container mat-form-field {
+  width: 300px;  /* Aumenté el tamaño de los campos de formulario */
+}
+
+.search-container button {
+  margin-left: 10px;
+  padding: 8px 20px;  /* Aumenté el padding del botón */
+  font-size: 16px;  /* Aumenté el tamaño de la fuente */
+  text-transform: none; 
+}
+
+.search-container button mat-icon {
+  margin-right: 8px;  /* Aumenté el margen entre el icono y el texto */
+}
+
+.buscar-productos {
+  margin-bottom: 20px;
+}
+
+
+table {
+  width: 100%;
+  margin-top: 30px;  /* Aumenté el espacio superior de la tabla */
+  border-collapse: collapse;
+}
+
+table mat-header-cell {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;  /* Aumenté el padding de las celdas de la cabecera */
+}
+
+table mat-cell {
+  padding: 12px;  /* Aumenté el padding de las celdas de la tabla */
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+table mat-header-row {
+  background-color: #f5f5f5;
+}
+
+table mat-row {
+  background-color: #fff;
+}
+
+table mat-row:hover {
+  background-color: #f1f1f1;
+}
+
+mat-paginator {
+  margin-top: 30px;  /* Aumenté el espacio superior del paginador */
+}
+
+button.mat-button {
+  font-size: 16px; 
+  
+}
+
+.btn-eliminar {
+  // border: 1px solid red;
+  background-color: #DC3545;
+  color: #fff;
+}
+
+.btn-actualizar {
+  margin-left: 5px;
+  background-color: #FFC107;
+  color: #fff;
+}
+
+button.mat-button:hover {
+  background-color: #e0e0e0;
+}
+
+.product-image {
+  width: 120px;  /* Aumenté el tamaño de las imágenes */
+  height: 120px;  /* Aumenté el tamaño de las imágenes */
+  object-fit: cover; 
+  border-radius: 10px;  /* Aumenté el radio de borde */
+}
+
+table mat-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

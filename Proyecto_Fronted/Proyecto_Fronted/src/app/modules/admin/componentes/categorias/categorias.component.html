@@ -1,0 +1,25 @@
+<div class="categoria-container">
+  <h2>Categorías</h2>
+  <div class="form-container">
+    <input type="text" [(ngModel)]="nuevaCategoria.nombre" placeholder="Nombre de la categoría" />
+    <button mat-raised-button color="primary" (click)="agregarCategoria()">Agregar Categoría</button>
+  </div>
+
+  <div class="categorias-list">
+    <div *ngFor="let categoria of categorias" class="categoria-card">
+      <span>{{ categoria.nombre }}</span>
+
+      <button mat-icon-button (click)="editarCategoria(categoria)">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="eliminarCategoria(categoria.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="categoriaEditada.id" class="form-container">
+    <input type="text" [(ngModel)]="categoriaEditada.nombre" placeholder="Nuevo nombre de la categoría" />
+    <button mat-raised-button color="accent" (click)="actualizarCategoria()">Actualizar Categoría</button>
+  </div>
+</div>

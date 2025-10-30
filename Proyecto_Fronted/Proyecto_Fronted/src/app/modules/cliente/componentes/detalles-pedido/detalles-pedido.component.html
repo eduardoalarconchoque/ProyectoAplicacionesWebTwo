@@ -1,0 +1,24 @@
+<h1 class="h1-de" mat-dialog-title>Detalles del Pedido</h1>
+<mat-dialog-content>
+  <p><strong>Order ID:</strong> {{ data.orderId }}</p>
+
+  <p><strong>Método de pago:</strong> {{ data.metodo }}</p>
+  
+  <p><strong>Monto:</strong> {{ data.monto | currency }}</p>
+
+  <p><strong>Estado:</strong> <strong [ngStyle]="{
+    'color': data.status === 'PENDIENTE' ? 'gray' :
+             data.status === 'PROCESANDO' ? 'blue' :
+             data.status === 'ENTREGADO' ? 'orange' :
+             'green'}">{{ data.status }}</strong></p>
+  <p><strong>Fecha:</strong> {{ data.fecha | date: 'short' }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="descargarDetalles(data.orderId, data.userId)" [disabled]="loading">
+    {{ loading ? 'Descargando...' : 'Descargar Detalle de Pedido' }}
+  </button>
+  <button class="btn-cerrar" mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>
+
+

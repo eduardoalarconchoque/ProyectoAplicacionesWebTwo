@@ -1,0 +1,80 @@
+<div class="carousel-container">
+    <div class="carousel-slide">
+      <img [src]="banner[currentIndex].image" [alt]="products[currentIndex]" class="carousel-image">
+      <div class="carousel-caption">
+       
+      </div>
+    </div>
+  
+    <div class="carousel-controls">
+      <button mat-icon-button (click)="prevSlide()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <button mat-icon-button (click)="nextSlide()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
+  </div>
+  
+  <div class="intro-text">
+    <h2>Bienvenido a nuestra tienda de e-commerce para hombres</h2>
+    <p>En nuestra tienda online encontrarás una gran variedad de productos para hombres, como:</p>
+    
+    <div class="product-cards">
+      <div class="product-card">
+        <mat-icon class="product-icon">checkroom</mat-icon>
+        <h3>Polos</h3>
+      </div>
+      <div class="product-card">
+        <mat-icon class="product-icon">checkroom</mat-icon>
+        <h3>Camisas</h3>
+      </div>
+      <div class="product-card">
+        <mat-icon class="product-icon">style</mat-icon>
+        <h3>Casacas</h3>
+      </div>
+      <div class="product-card">
+        <mat-icon class="product-icon">shopping_bag</mat-icon>
+        <h3>Jeans</h3>
+      </div>
+      <div class="product-card">
+        <mat-icon class="product-icon">directions_run</mat-icon>
+        <h3>Zapatillas</h3>
+      </div>
+    </div>
+    
+
+
+    <p>Todo lo que necesitas está aquí, ¡explora nuestra tienda ahora!</p>
+   
+    <div class="real-products">
+      <div *ngFor="let product of products" class="real-product-card">
+        <img [src]="product.image" alt="{{ product.name }}" class="real-product-image">
+        <h3>{{ product.name }}</h3>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">Precio: <strong>S/ {{ product.price }}</strong></p>
+        <p class="stock">Stock disponible: {{ product.stock }}</p>
+
+        <button mat-raised-button color="primary" (click)="redirigirAlRegistro()">
+          <mat-icon>shopping_cart</mat-icon>
+          
+        </button>
+      </div>
+    </div>
+    
+    <div class="social-media">
+      <h3>Síguenos en nuestras redes sociales</h3>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank">
+          <img src="icons/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+          <img src="icons/x.png" alt="Twitter">   
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <img src="icons/descarga.jpg" alt="Instagram">
+        </a>
+      </div>
+    </div>
+  </div>
+  

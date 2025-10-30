@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Actualizar Producto</h2>
+
+<form [formGroup]="formularioProducto" (ngSubmit)="actualizarProducto()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" placeholder="Nombre del Producto">
+    <mat-error *ngIf="formularioProducto.get('nombre')?.hasError('required')">El nombre es obligatorio.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput formControlName="descripcion" placeholder="Descripción del Producto"></textarea>
+    <mat-error *ngIf="formularioProducto.get('descripcion')?.hasError('required')">La descripción es obligatoria.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Precio</mat-label>
+    <input matInput formControlName="precio" type="number" placeholder="Precio del Producto">
+    <mat-error *ngIf="formularioProducto.get('precio')?.hasError('required')">El precio es obligatorio.</mat-error>
+    <mat-error *ngIf="formularioProducto.get('precio')?.hasError('min')">El precio no puede ser negativo.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Stock</mat-label>
+    <input matInput formControlName="stock" type="number" placeholder="Cantidad en Stock">
+    <mat-error *ngIf="formularioProducto.get('stock')?.hasError('required')">El stock es obligatorio.</mat-error>
+    <mat-error *ngIf="formularioProducto.get('stock')?.hasError('min')">El stock no puede ser negativo.</mat-error>
+  </mat-form-field>
+
+  <!-- Campo para cargar archivo -->
+  <div>
+    <label class="text-img">Imagen</label>
+    <input class="img-container" type="file" (change)="onFileSelected($event)">
+  </div>
+
+  <!-- Vista previa de la imagen -->
+  <div *ngIf="imagePreview">
+    <p>Vista previa:</p>
+    <img [src]="imagePreview" alt="Vista previa de la imagen" class="image-preview" />
+  </div>
+
+  <!-- Botones de acción -->
+  <div mat-dialog-actions class="btn-eli-act-lis-prod">
+    <button class="btn-eli" mat-button (click)="onCancel()">Cancelar</button>
+    <button class="btn-act" color="primary" type="submit" [disabled]="formularioProducto.invalid">
+      Actualizar Producto
+    </button>
+  </div>
+</form>

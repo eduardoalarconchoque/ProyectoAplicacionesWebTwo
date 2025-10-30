@@ -1,0 +1,60 @@
+<div *ngIf="!loading && pagos.length > 0; else noPagos" class="table-container">
+    <table mat-table [dataSource]="pagos" matSort class="mat-elevation-z8">
+    
+    
+      <ng-container matColumnDef="orderId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Order ID </th>
+        <td mat-cell *matCellDef="let pago"> {{ pago.orderId }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="metodo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Método </th>
+        <td mat-cell *matCellDef="let pago"> {{ pago.metodo }} </td>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="monto">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>
+        <td mat-cell *matCellDef="let pago"> {{ pago.monto | currency }} </td>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+        <td mat-cell *matCellDef="let pago">
+          <strong [ngStyle]="{
+            'color': pago.status === 'COMPLETADO' ? 'green' :
+                     pago.status === 'PROCESANDO' ? 'blue' :
+                     pago.status === 'ENVIADO' ? 'orange' :
+                     'green'}">
+            {{ pago.status }}
+          </strong>
+        </td>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+        <td mat-cell *matCellDef="let pago"> {{ pago.fecha | date: 'short' }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let pago">
+          <button mat-button color="primary" (click)="verDetalles(pago)">Ver Detalles</button>
+        </td>
+      </ng-container>
+    
+     
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+  </div>
+  
+  <ng-template #noPagos>
+    <div class="no-pagos-message">
+      <p>No hay pagos disponibles.</p>
+    </div>
+  </ng-template>
+  

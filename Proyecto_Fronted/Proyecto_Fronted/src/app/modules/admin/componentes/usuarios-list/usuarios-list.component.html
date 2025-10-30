@@ -1,0 +1,35 @@
+
+<div class="container">
+    <h2>Lista de Usuarios</h2>
+  
+    <table mat-table [dataSource]="usuarios">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.id}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let usuario">
+          <mat-icon class="usuario-icon">person</mat-icon>
+          {{usuario.nombre}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.email}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let usuario">
+          <button class="color-button-eliminar" mat-button (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
